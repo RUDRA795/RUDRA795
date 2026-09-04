@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#040b14" />
+      <stop offset="100%" stop-color="#020408" />
+    </linearGradient>
+    <linearGradient id="blueAura" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.9" />
+      <stop offset="45%" stop-color="#0284c7" stop-opacity="0.6" />
+      <stop offset="85%" stop-color="#38bdf8" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#bae6fd" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="blueCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e0f2fe" />
+      <stop offset="30%" stop-color="#00f0ff" />
+      <stop offset="70%" stop-color="#0369a1" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0" />
+    </radialGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <style>
+      @keyframes floatAnim { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+      @keyframes spinSlow { to { transform: rotate(360deg); } }
+      @keyframes flamePulse { 0%, 100% { transform: scaleY(1); opacity: 0.85; } 50% { transform: scaleY(1.05); opacity: 1; } }
+      .warrior-float { animation: floatAnim 4s ease-in-out infinite; }
+      .ring-spin { animation: spinSlow 20s linear infinite; transform-origin: 300px 360px; }
+      .flame { animation: flamePulse 2s ease-in-out infinite; transform-origin: 300px 550px; }
+      .mono { font-family: 'Courier New', Courier, monospace; letter-spacing: 2px; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bgGrad)" rx="16"/>
+  <rect width="100%" height="100%" fill="none" stroke="#00f0ff" stroke-width="1.5" stroke-opacity="0.3" rx="16"/>
+
+  <!-- Character Banner Header -->
+  <g transform="translate(30, 40)">
+    <rect x="0" y="0" width="160" height="24" rx="4" fill="#00f0ff" fill-opacity="0.1" stroke="#00f0ff" stroke-width="1" />
+    <circle cx="12" cy="12" r="4" fill="#00f0ff" filter="url(#glow)" />
+    <text x="24" y="16" fill="#00f0ff" font-size="10" class="mono" font-weight="700">SPEC://BLUE_STRIKER</text>
+    <text x="0" y="52" fill="#ffffff" font-size="24" font-family="sans-serif" font-weight="900" letter-spacing="3">CYAN WARRIOR</text>
+    <text x="0" y="72" fill="#7dd3fc" font-size="11" class="mono">KINETIC HIGH-SPEED PLASMA AURA</text>
+  </g>
+
+  <!-- Aura Energy Field -->
+  <circle cx="300" cy="360" r="210" fill="url(#blueCore)" opacity="0.6"/>
+
+  <!-- Rotating Arc Rings -->
+  <g class="ring-spin">
+    <circle cx="300" cy="360" r="180" fill="none" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="15 25 45 15" opacity="0.4"/>
+    <circle cx="300" cy="360" r="150" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="5 15" opacity="0.6"/>
+  </g>
+
+  <!-- Upward Plasma Aura -->
+  <g class="flame">
+    <path d="M 300 120 Q 420 280 390 530 Q 300 570 210 530 Q 180 280 300 120 Z" fill="url(#blueAura)" filter="url(#glow)"/>
+    <path d="M 270 510 Q 240 330 275 220" stroke="#bae6fd" stroke-width="2.5" fill="none" opacity="0.8"/>
+    <path d="M 330 510 Q 360 330 325 220" stroke="#bae6fd" stroke-width="2.5" fill="none" opacity="0.8"/>
+  </g>
+
+  <!-- Character Silhouette & Armor -->
+  <g class="warrior-float" transform="translate(300, 360)">
+    <!-- Dual Photon Sabers -->
+    <line x1="-130" y1="90" x2="-50" y2="-120" stroke="#00f0ff" stroke-width="4" filter="url(#glow)" stroke-linecap="round"/>
+    <line x1="-130" y1="90" x2="-50" y2="-120" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+
+    <line x1="130" y1="90" x2="50" y2="-120" stroke="#00f0ff" stroke-width="4" filter="url(#glow)" stroke-linecap="round"/>
+    <line x1="130" y1="90" x2="50" y2="-120" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- High-mobility Cyber Mantle -->
+    <path d="M -50 -10 L -95 -60 L -65 -5 L -110 35 L -45 15 Z" fill="#0f172a" stroke="#00f0ff" stroke-width="1.5" filter="url(#glow)"/>
+    <path d="M 50 -10 L 95 -60 L 65 -5 L 110 35 L 45 15 Z" fill="#0f172a" stroke="#00f0ff" stroke-width="1.5" filter="url(#glow)"/>
+
+    <!-- Exoskeleton Body -->
+    <path d="M -25 -25 L 25 -25 L 34 35 L 18 100 L -18 100 L -34 35 Z" fill="#050d1a" stroke="#38bdf8" stroke-width="2"/>
+    <path d="M -15 -15 L 15 -15 L 22 30 L 0 55 L -22 30 Z" fill="#0c2340" stroke="#00f0ff" stroke-width="1"/>
+
+    <!-- Core Arc Reactor -->
+    <polygon points="0,0 -10,18 10,18" fill="#00f0ff" filter="url(#glow)"/>
+    <circle cx="0" cy="12" r="4" fill="#ffffff"/>
+
+    <!-- Pauldrons -->
+    <path d="M -26 -25 L -50 -38 L -58 -10 L -30 -6 Z" fill="#1e293b" stroke="#00f0ff" stroke-width="1.5"/>
+    <path d="M 26 -25 L 50 -38 L 58 -10 L 30 -6 Z" fill="#1e293b" stroke="#00f0ff" stroke-width="1.5"/>
+
+    <!-- Head & Futuristic Helmet Visor -->
+    <rect x="-8" y="-40" width="16" height="16" fill="#0f172a"/>
+    <path d="M -18 -58 L 18 -58 L 14 -35 L -14 -35 Z" fill="#0a1220" stroke="#38bdf8" stroke-width="1.5"/>
+    <!-- Crest / Spikes -->
+    <path d="M 0 -105 L -12 -75 L -30 -88 L -20 -65 L -38 -60 L -16 -50 L 0 -62 L 16 -50 L 38 -60 L 20 -65 L 30 -88 L 12 -75 Z" fill="#0c192e" stroke="#00f0ff" stroke-width="2"/>
+    <!-- Glowing Visor Beam -->
+    <line x1="-16" y1="-46" x2="16" y2="-46" stroke="#00f0ff" stroke-width="2.5" filter="url(#glow)"/>
+    <line x1="-10" y1="-46" x2="10" y2="-46" stroke="#ffffff" stroke-width="1.5"/>
+  </g>
+
+  <!-- Energy Wave Base -->
+  <ellipse cx="300" cy="550" rx="150" ry="18" fill="none" stroke="#00f0ff" stroke-width="2" opacity="0.5" filter="url(#glow)"/>
+
+  <!-- Footer Specs -->
+  <g transform="translate(30, 640)">
+    <text x="0" y="0" fill="#64748b" font-size="10" class="mono">AFFINITY: AGENTIC AI // VELOCITY: MAXIMUM // POSE: DUAL SABER STRIKE</text>
+    <line x1="0" y1="12" x2="540" y2="12" stroke="#00f0ff" stroke-opacity="0.2" stroke-width="1"/>
+  </g>
+</svg>

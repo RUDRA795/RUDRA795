@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="nagariBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080811" />
+      <stop offset="50%" stop-color="#120c24" />
+      <stop offset="100%" stop-color="#05030a" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <pattern id="cityGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#a855f7" stroke-width="0.5" stroke-opacity="0.15"/>
+    </pattern>
+    <style>
+      @keyframes radarSweep {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .sweep { animation: radarSweep 8s linear infinite; transform-origin: 220px 220px; }
+      .mono { font-family: 'Courier New', Courier, monospace; letter-spacing: 1.5px; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#nagariBg)" rx="12" stroke="#a855f7" stroke-width="1.2" stroke-opacity="0.3"/>
+  <rect width="100%" height="100%" fill="url(#cityGrid)" rx="12"/>
+
+  <!-- Card Top Banner -->
+  <g transform="translate(35, 30)">
+    <rect x="0" y="0" width="180" height="24" rx="4" fill="#6b21a8" fill-opacity="0.25" stroke="#a855f7" stroke-width="1" />
+    <text x="90" y="16" fill="#c084fc" font-size="10.5" class="mono" font-weight="700" text-anchor="middle">🏙️ URBAN COMMAND AI</text>
+    
+    <text x="0" y="55" fill="#ffffff" font-size="24" class="sans" font-weight="900">NAGARIX — AI URBAN INTELLIGENCE PLATFORM</text>
+    <text x="0" y="76" fill="#94a3b8" font-size="13" class="sans">
+      Geospatial telemetry, civic issue clustering, recurring pattern detection, SLA risk prediction &amp; automated image triage
+    </text>
+  </g>
+
+  <!-- RADAR & GEOSPATIAL COMMAND CLUSTERS -->
+  <g transform="translate(35, 110)">
+    <!-- Geospatial Radar Display (Left) -->
+    <g transform="translate(0, 0)">
+      <circle cx="110" cy="110" r="95" fill="#1e1035" stroke="#a855f7" stroke-width="1.5" stroke-opacity="0.6"/>
+      <circle cx="110" cy="110" r="65" fill="none" stroke="#7e22ce" stroke-width="1" stroke-dasharray="4 4" opacity="0.6"/>
+      <circle cx="110" cy="110" r="35" fill="none" stroke="#a855f7" stroke-width="1" stroke-opacity="0.4"/>
+      <line x1="15" y1="110" x2="205" y2="110" stroke="#a855f7" stroke-width="0.8" stroke-opacity="0.3"/>
+      <line x1="110" y1="15" x2="110" y2="205" stroke="#a855f7" stroke-width="0.8" stroke-opacity="0.3"/>
+
+      <!-- Radar Beam -->
+      <g class="sweep">
+        <path d="M 110 110 L 195 60 A 95 95 0 0 0 160 30 Z" fill="#a855f7" fill-opacity="0.3"/>
+        <line x1="110" y1="110" x2="195" y2="60" stroke="#c084fc" stroke-width="2" filter="url(#glow)"/>
+      </g>
+
+      <!-- Geospatial Incident Blips -->
+      <circle cx="70" cy="80" r="4" fill="#ef4444" filter="url(#glow)"/>
+      <circle cx="70" cy="80" r="8" fill="none" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+      <text x="78" y="76" fill="#fca5a5" font-size="8" class="mono">CRIT_SLA</text>
+
+      <circle cx="150" cy="130" r="4" fill="#eab308" filter="url(#glow)"/>
+      <text x="158" y="134" fill="#fde047" font-size="8" class="mono">CLUSTER_04</text>
+
+      <circle cx="130" cy="70" r="3.5" fill="#3b82f6"/>
+      <circle cx="95" cy="150" r="3.5" fill="#10b981"/>
+    </g>
+
+    <!-- INTELLIGENCE MODULES (Right Grid) -->
+    <g transform="translate(240, 5)">
+      <!-- Module 1: Image Triage -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="180" height="95" rx="6" fill="#130b24" stroke="#a855f7" stroke-width="1"/>
+        <text x="14" y="22" fill="#e9d5ff" font-size="11" class="mono" font-weight="700">AI IMAGE TRIAGE</text>
+        <text x="14" y="42" fill="#a855f7" font-size="9" class="mono">STATUS: ACTIVE</text>
+        <text x="14" y="62" fill="#94a3b8" font-size="9.5" class="sans">Vision classification of road damage, waste &amp; infrastructure faults.</text>
+      </g>
+
+      <!-- Module 2: Issue Clustering -->
+      <g transform="translate(200, 0)">
+        <rect x="0" y="0" width="180" height="95" rx="6" fill="#130b24" stroke="#a855f7" stroke-width="1"/>
+        <text x="14" y="22" fill="#e9d5ff" font-size="11" class="mono" font-weight="700">ISSUE CLUSTERING</text>
+        <text x="14" y="42" fill="#3b82f6" font-size="9" class="mono">DBSCAN + GEOSPATIAL</text>
+        <text x="14" y="62" fill="#94a3b8" font-size="9.5" class="sans">Auto-groups citizen reports into unified municipal repair tickets.</text>
+      </g>
+
+      <!-- Module 3: SLA Risk Engine -->
+      <g transform="translate(400, 0)">
+        <rect x="0" y="0" width="180" height="95" rx="6" fill="#130b24" stroke="#ef4444" stroke-width="1" stroke-opacity="0.8"/>
+        <text x="14" y="22" fill="#fca5a5" font-size="11" class="mono" font-weight="700">SLA RISK RADAR</text>
+        <text x="14" y="42" fill="#ef4444" font-size="9" class="mono">PREDICTIVE ALARM</text>
+        <text x="14" y="62" fill="#94a3b8" font-size="9.5" class="sans">Identifies escalating civic delays before municipal breach.</text>
+      </g>
+
+      <!-- Pipeline Bar Below Modules -->
+      <g transform="translate(0, 115)">
+        <rect x="0" y="0" width="580" height="60" rx="6" fill="#0c0717" stroke="#7e22ce" stroke-width="1"/>
+        <text x="16" y="24" fill="#c084fc" font-size="10" class="mono" font-weight="700">DATA PIPELINE FLOW:</text>
+        <text x="16" y="45" fill="#f3e8ff" font-size="10" class="mono">
+          CITIZEN REPORT &rarr; AI TRIAGE &rarr; GEO-CLUSTER &rarr; WARD INTELLIGENCE &rarr; ACTION
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Footer -->
+  <g transform="translate(35, 335)">
+    <text x="0" y="0" fill="#a855f7" font-size="10" class="mono">
+      ENGINEERED FOR WIDE-SCALE MUNICIPAL DATA INTEGRATION &amp; CROSS-DEPARTMENT RESOLUTION
+    </text>
+  </g>
+</svg>

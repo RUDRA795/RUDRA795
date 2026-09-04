@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a0314" />
+      <stop offset="100%" stop-color="#030107" />
+    </linearGradient>
+    <linearGradient id="voidAura" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.9" />
+      <stop offset="45%" stop-color="#6b21a8" stop-opacity="0.6" />
+      <stop offset="85%" stop-color="#c084fc" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#f3e8ff" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="voidCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f3e8ff" />
+      <stop offset="25%" stop-color="#a855f7" />
+      <stop offset="65%" stop-color="#3b0764" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <style>
+      @keyframes floatAnim { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+      @keyframes spinSlow { to { transform: rotate(360deg); } }
+      @keyframes flamePulse { 0%, 100% { transform: scaleY(1); opacity: 0.8; } 50% { transform: scaleY(1.06); opacity: 1; } }
+      .warrior-float { animation: floatAnim 4s ease-in-out infinite; }
+      .ring-spin { animation: spinSlow 28s linear infinite; transform-origin: 300px 360px; }
+      .flame { animation: flamePulse 2.2s ease-in-out infinite; transform-origin: 300px 550px; }
+      .mono { font-family: 'Courier New', Courier, monospace; letter-spacing: 2px; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bgGrad)" rx="16"/>
+  <rect width="100%" height="100%" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-opacity="0.3" rx="16"/>
+
+  <!-- Character Banner Header -->
+  <g transform="translate(30, 40)">
+    <rect x="0" y="0" width="160" height="24" rx="4" fill="#a855f7" fill-opacity="0.1" stroke="#a855f7" stroke-width="1" />
+    <circle cx="12" cy="12" r="4" fill="#a855f7" filter="url(#glow)" />
+    <text x="24" y="16" fill="#c084fc" font-size="10" class="mono" font-weight="700">SPEC://VOID_MONARCH</text>
+    <text x="0" y="52" fill="#ffffff" font-size="24" font-family="sans-serif" font-weight="900" letter-spacing="3">VOID WARRIOR</text>
+    <text x="0" y="72" fill="#d8b4fe" font-size="11" class="mono">QUANTUM DIMENSIONAL RIFT ENERGY</text>
+  </g>
+
+  <!-- Aura Energy Field -->
+  <circle cx="300" cy="360" r="220" fill="url(#voidCore)" opacity="0.65"/>
+
+  <!-- Rotating Gravitational Event Horizon Rings -->
+  <g class="ring-spin">
+    <circle cx="300" cy="360" r="185" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="20 20 40 10" opacity="0.4"/>
+    <circle cx="300" cy="360" r="150" fill="none" stroke="#c084fc" stroke-width="1.5" stroke-dasharray="10 15" opacity="0.6"/>
+    <!-- Dimensional Rift Crystals -->
+    <rect x="295" y="170" width="10" height="10" fill="#c084fc" transform="rotate(45 300 175)" filter="url(#glow)"/>
+    <rect x="295" y="540" width="10" height="10" fill="#c084fc" transform="rotate(45 300 545)" filter="url(#glow)"/>
+    <rect x="110" y="355" width="10" height="10" fill="#c084fc" transform="rotate(45 115 360)" filter="url(#glow)"/>
+    <rect x="480" y="355" width="10" height="10" fill="#c084fc" transform="rotate(45 485 360)" filter="url(#glow)"/>
+  </g>
+
+  <!-- Upward Void Flame Aura -->
+  <g class="flame">
+    <path d="M 300 110 Q 425 270 400 535 Q 300 575 200 535 Q 175 270 300 110 Z" fill="url(#voidAura)" filter="url(#glow)"/>
+    <path d="M 270 515 Q 230 325 275 210" stroke="#e9d5ff" stroke-width="2.5" fill="none" opacity="0.8"/>
+    <path d="M 330 515 Q 370 325 325 210" stroke="#e9d5ff" stroke-width="2.5" fill="none" opacity="0.8"/>
+  </g>
+
+  <!-- Character Silhouette & Void Exosuit -->
+  <g class="warrior-float" transform="translate(300, 360)">
+    <!-- Dimensional Rift Shards / Floating Wings -->
+    <path d="M -55 -10 L -120 -70 L -75 5 L -130 55 L -50 20 Z" fill="#180728" stroke="#a855f7" stroke-width="1.5" filter="url(#glow)"/>
+    <path d="M 55 -10 L 120 -70 L 75 5 L 130 55 L 50 20 Z" fill="#180728" stroke="#a855f7" stroke-width="1.5" filter="url(#glow)"/>
+
+    <!-- Obsidian Torso Plate -->
+    <path d="M -26 -25 L 26 -25 L 35 35 L 19 105 L -19 105 L -35 35 Z" fill="#08020d" stroke="#c084fc" stroke-width="2"/>
+    <path d="M -15 -15 L 15 -15 L 22 30 L 0 60 L -22 30 Z" fill="#2e1065" stroke="#a855f7" stroke-width="1.5"/>
+
+    <!-- Singularity Core -->
+    <circle cx="0" cy="18" r="9" fill="#000000" stroke="#c084fc" stroke-width="2" filter="url(#glow)"/>
+    <circle cx="0" cy="18" r="4" fill="#f3e8ff"/>
+
+    <!-- Pauldrons -->
+    <path d="M -26 -25 L -54 -40 L -62 -10 L -32 -6 Z" fill="#1e0c38" stroke="#c084fc" stroke-width="1.5"/>
+    <path d="M 26 -25 L 54 -40 L 62 -10 L 32 -6 Z" fill="#1e0c38" stroke="#c084fc" stroke-width="1.5"/>
+
+    <!-- Head & Mask Base -->
+    <rect x="-8" y="-40" width="16" height="16" fill="#08020d"/>
+    <path d="M -18 -58 L 18 -58 L 14 -35 L -14 -35 Z" fill="#150524" stroke="#a855f7" stroke-width="1.5"/>
+    
+    <!-- Void Horns / Sharp Anime Spikes -->
+    <path d="M 0 -115 L -14 -75 L -36 -90 L -24 -66 L -44 -58 L -18 -48 L 0 -64 L 18 -48 L 44 -58 L 24 -66 L 36 -90 L 14 -75 Z" fill="#1e0c38" stroke="#a855f7" stroke-width="2.2"/>
+    
+    <!-- Glowing Purple Eyes / Visor -->
+    <line x1="-16" y1="-46" x2="16" y2="-46" stroke="#c084fc" stroke-width="2.5" filter="url(#glow)"/>
+    <line x1="-8" y1="-46" x2="8" y2="-46" stroke="#ffffff" stroke-width="1.5"/>
+
+    <!-- Floating Void Scythe / Catalyst -->
+    <path d="M 70 -120 Q 110 -70 80 130" stroke="#a855f7" stroke-width="3.5" fill="none" filter="url(#glow)"/>
+    <path d="M 70 -120 Q 30 -140 -20 -110" stroke="#c084fc" stroke-width="4" fill="none" filter="url(#glow)"/>
+  </g>
+
+  <!-- Gravitational Ripple Base -->
+  <ellipse cx="300" cy="550" rx="150" ry="18" fill="none" stroke="#a855f7" stroke-width="2" opacity="0.6" filter="url(#glow)"/>
+
+  <!-- Footer Specs -->
+  <g transform="translate(30, 640)">
+    <text x="0" y="0" fill="#7e22ce" font-size="10" class="mono">AFFINITY: DEEP RESEARCH &amp; REASONING // POWER: SINGULARITY // POSE: VOID SCYTHE</text>
+    <line x1="0" y1="12" x2="540" y2="12" stroke="#a855f7" stroke-opacity="0.2" stroke-width="1"/>
+  </g>
+</svg>
