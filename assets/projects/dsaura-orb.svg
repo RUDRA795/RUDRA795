@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dsauraBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0417" />
+      <stop offset="50%" stop-color="#1f0933" />
+      <stop offset="100%" stop-color="#08020d" />
+    </linearGradient>
+    <radialGradient id="orbGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fdf4ff" />
+      <stop offset="30%" stop-color="#d946ef" />
+      <stop offset="70%" stop-color="#86198f" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0" />
+    </radialGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <style>
+      @keyframes spinOrb { to { transform: rotate(360deg); } }
+      @keyframes floatOrb { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+      .orb-rot { animation: spinOrb 16s linear infinite; transform-origin: 150px 190px; }
+      .orb-hover { animation: floatOrb 3.5s ease-in-out infinite; }
+      .mono { font-family: 'Courier New', Courier, monospace; letter-spacing: 1.5px; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#dsauraBg)" rx="12" stroke="#d946ef" stroke-width="1.2" stroke-opacity="0.3"/>
+
+  <!-- Card Top Banner -->
+  <g transform="translate(35, 30)">
+    <rect x="0" y="0" width="180" height="24" rx="4" fill="#a21caf" fill-opacity="0.25" stroke="#e879f9" stroke-width="1" />
+    <text x="90" y="16" fill="#f0abfc" font-size="10.5" class="mono" font-weight="700" text-anchor="middle">🔮 IMMERSIVE AI INTERFACE</text>
+    
+    <text x="0" y="55" fill="#ffffff" font-size="24" class="sans" font-weight="900">DSPHERE / DSAURA — AI EVENT INTELLIGENCE</text>
+    <text x="0" y="76" fill="#94a3b8" font-size="13" class="sans">
+      Spatial event orchestration &amp; conversational assistant concept expressed through an interactive 3D aura orb
+    </text>
+  </g>
+
+  <!-- INTERACTIVE ORB & EVENT SYSTEM -->
+  <g transform="translate(35, 110)">
+    <!-- THE AURA ORB (Left) -->
+    <g class="orb-hover">
+      <!-- Glow field -->
+      <circle cx="150" cy="90" r="85" fill="url(#orbGrad)" opacity="0.6"/>
+      <!-- Inner core -->
+      <circle cx="150" cy="90" r="45" fill="#f472b6" filter="url(#glow)"/>
+      <circle cx="150" cy="90" r="20" fill="#ffffff"/>
+      
+      <!-- Rotating Gyroscopic Rings -->
+      <g class="orb-rot">
+        <ellipse cx="150" cy="90" rx="75" ry="25" fill="none" stroke="#f0abfc" stroke-width="1.5" stroke-dasharray="8 6"/>
+        <ellipse cx="150" cy="90" rx="25" ry="75" fill="none" stroke="#c084fc" stroke-width="1.5" stroke-dasharray="12 4"/>
+      </g>
+    </g>
+
+    <!-- EVENT INTELLIGENCE FEATURES (Right) -->
+    <g transform="translate(290, 10)">
+      <rect x="0" y="0" width="530" height="155" rx="8" fill="#150624" stroke="#a21caf" stroke-width="1"/>
+      
+      <g transform="translate(25, 25)">
+        <circle cx="6" cy="6" r="4" fill="#f0abfc"/>
+        <text x="20" y="10" fill="#fdf4ff" font-size="12" class="mono" font-weight="700">DYNAMIC EVENT DISCOVERY</text>
+        <text x="20" y="26" fill="#c084fc" font-size="10" class="sans">Context-aware agenda mapping &amp; real-time schedule adjustments.</text>
+      </g>
+
+      <g transform="translate(25, 65)">
+        <circle cx="6" cy="6" r="4" fill="#d946ef"/>
+        <text x="20" y="10" fill="#fdf4ff" font-size="12" class="mono" font-weight="700">SPATIAL ATTENDEE TRIAGE</text>
+        <text x="20" y="26" fill="#c084fc" font-size="10" class="sans">Crowd density routing, networking matching &amp; session recommendations.</text>
+      </g>
+
+      <g transform="translate(25, 105)">
+        <circle cx="6" cy="6" r="4" fill="#a855f7"/>
+        <text x="20" y="10" fill="#fdf4ff" font-size="12" class="mono" font-weight="700">3D AURA RESPONSIVENESS</text>
+        <text x="20" y="26" fill="#c084fc" font-size="10" class="sans">Orb alters color, kinetic pulse and resonance based on system activity state.</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Footer -->
+  <g transform="translate(35, 335)">
+    <text x="0" y="0" fill="#d946ef" font-size="10" class="mono">
+      EXPLORING FUTURE 3D/SPATIAL COMPUTING PARADIGMS FOR NEXT-GEN INTELLIGENT ASSISTANTS
+    </text>
+  </g>
+</svg>
